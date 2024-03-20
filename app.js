@@ -128,14 +128,14 @@ async function processQueueMessage(message) {
   }
 }
 
-processQueueMessage({
-  type: "CREATE",
-  body: {
-    userId: 180,
-    connectionId: 359,
-    folderId: "1MzT-pGjvIdDFHj91lqGHU1YcvPbWqD5t",
-  },
-});
+// processQueueMessage({
+//   type: "CREATE",
+//   body: {
+//     userId: 180,
+//     connectionId: 359,
+//     folderId: "1MzT-pGjvIdDFHj91lqGHU1YcvPbWqD5t",
+//   },
+// });
 
 async function fetchFilesFromFolder(
   folderId,
