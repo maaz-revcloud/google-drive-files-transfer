@@ -150,7 +150,7 @@ async function fetchFilesFromFolder(
     });
     const files = res.data.files;
     if (files.length) {
-      for (const file of files) {
+      await Promise.all(files.map(async (file)=>{
         if (file.mimeType === "application/vnd.google-apps.folder") {
           await fetchFilesFromFolder(
             file.id,
@@ -199,7 +199,7 @@ async function fetchFilesFromFolder(
             );
           }
         }
-      }
+      }))
     }
   } catch (err) {
     console.error("Error fetching files from folder:", err);
